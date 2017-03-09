@@ -4,26 +4,12 @@
 import pysynth as ps
 import sys, os
 from imagereader import get_column_average
+from songmaker import generate_song
 
-color_tuples = get_column_average(sys.argv[1])
-notes_list = []
+file_name = sys.argv[1]
+song_name = sys.argv[2]
+synth_type = sys.argv[3]
+bpm = 200
 
-note_types = ('a', 'b', 'c', 'd', 'e', 'f', 'g')
-
-for c in color_tuples:
-    note_num = c[0]%6
-    note = note_types[note_num]
-    octave = (c[1]%7) + 1
-    notes_list.append((note, octave))
-
-#for note in notes_list:
-#   print(note)
-
-
-
-song = tuple(notes_list)
-
-ps.make_wav(song, fn = str(sys.argv[2]), bpm = 180)
-
-
-
+color_tuples = get_column_average(file_name)
+generate_song(color_tuples, song_name, synth_type, bpm)
