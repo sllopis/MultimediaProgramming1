@@ -3,7 +3,7 @@ import pysynth_b as psb
 import pysynth_s as pss
 import numpy
 
-def generate_song(data, name, synth_type, bpm):
+def generate_song(data, name, synth_type, beats):
     if synth_type == 'a':
         ps = psa
     elif synth_type == 'b':
@@ -23,5 +23,5 @@ def generate_song(data, name, synth_type, bpm):
         notes_list.append((note, octave))
 
     song = tuple(notes_list)
-    ps.make_wav(song, fn = name, bpm = 300)
-    return ("Song finished!")
+    ps.make_wav(song, fn = name, bpm = beats)
+    return (print("Song job finished!"))
