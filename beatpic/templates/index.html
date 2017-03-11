@@ -1,0 +1,46 @@
+<!doctype html> 
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PicBeat</title>
+        <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+        <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+        <link rel='stylesheet' type='text/css' href='{{ style }}' />
+    </head>
+    <body>
+        <div class='container'>
+        <div class='row'>
+            <div class="col-lg-11 col-centered">
+                <h1 class="text-center" id="#page-title">PicBeat</h1>
+                <form action="/submit" method='post' enctype='multipart/form-data'>
+                    <div class='form-group'>
+                        <label for='inputType'>Synth Type</label>
+                        <select name='type' class="form-control" id='inputType'>
+                            <option value='a'>Basic (fast processing)</option>    
+                            <option value='b'>ePiano</option>    
+                            <option value='s'>Strings (slow processing)</option>    
+                        </select>  
+                    </div>
+                    
+                    <div class='form-group'>
+                        <label for='inputBpm'>BPM</label>
+                        <input type = 'text' name = 'bpm' class="form-control" id='inputBpm' />
+                    </div>
+                    
+                    <div class='form-group'>
+                        <label for='inputSong'>Song Name</label>
+                        <input type = 'text' name = 'songname' class="form-control" id='inputSong' />
+                    </div>
+                    <input type='file', name='file'>
+                    <br />
+                    {{ error_message|safe }}
+                    <br />
+                    <input type= 'submit' value = 'Submit' class="btn btn-primary">
+                </form>    
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
