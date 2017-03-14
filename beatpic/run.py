@@ -50,4 +50,10 @@ def result():
     return send_file(os.path.join(app.config['UPLOAD_FOLDER'], song_name), as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+      
+    app.run(
+    port=int(os.getenv('PORT', 8080)),
+    host=os.getenv('IP', '0.0.0.0')
+    )
+    
+    
