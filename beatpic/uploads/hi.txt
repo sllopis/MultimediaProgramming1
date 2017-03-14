@@ -1,0 +1,1 @@
+Directory in which the pictures uploaded to website go to.
