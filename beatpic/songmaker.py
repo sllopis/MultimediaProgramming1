@@ -19,7 +19,7 @@ def generate_song(data, name, synth_type, beats):
         notes_list.append(generate_note(c))
 
     song = tuple(notes_list)
-    ps.make_wav(song, fn = 'uploads/'+name, bpm = beats)
+    ps.make_wav(song, fn = 'uploads/'+name + '.wav', bpm = beats)
     return (print("Song job finished!"))
 
 def generate_note(c):

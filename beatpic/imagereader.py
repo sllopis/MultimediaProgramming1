@@ -15,20 +15,15 @@ def get_column_average(file):
 
     image_width = img.size[0]
     image_height = img.size[1]
-    aspectRatio = image_width/image_height
 
     for x in range(image_width):
         column_color_list = []
-        brightest_pixel = 0;
-        darkest_pixel = 765;
         for y in range(image_height):
             pix = img.getpixel((x,y))
-            if sum(pix) > brightest_pixel:
-                brightest_pixel = sum(pix)
             column_color_list.append(pix)
-        avg_r = mean(col[0] for col in column_color_list)
-        avg_g = mean(col[1] for col in column_color_list)
-        avg_b = mean(col[2] for col in column_color_list)
-        color_tuples.append((round(avg_r), round(avg_g), round(avg_b), brightest_pixel))
+        avg_r = mean(pxl[0] for pxl in column_color_list)
+        avg_g = mean(pxl[1] for pxl in column_color_list)
+        avg_b = mean(pxl[2] for pxl in column_color_list)
+        color_tuples.append((round(avg_r), round(avg_g), round(avg_b)))
 
     return(color_tuples)

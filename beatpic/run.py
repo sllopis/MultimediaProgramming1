@@ -38,7 +38,7 @@ def result():
     # Saves the file to the designated upload directory
     file = request.files['file']
     if file:
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename + '.wav'))
 
     # Creates a list of tuples for each column of pixels in the image
     color_tuples = get_column_average(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
@@ -47,13 +47,8 @@ def result():
     generate_song(color_tuples, song_name, synth_type, bpm)
 
     # Sends the finished song back to the user as a wav file
-    return send_file(os.path.join(app.config['UPLOAD_FOLDER'], song_name), as_attachment=True)
+    return send_file(os.path.join(app.config['UPLOAD_FOLDER'], song_name + '.wav'), as_attachment=True)
 
 if __name__ == '__main__':
-      
-    app.run(
-    port=int(os.getenv('PORT', 8080)),
-    host=os.getenv('IP', '0.0.0.0')
-    )
-    
+    app.run(debug=True)
     
