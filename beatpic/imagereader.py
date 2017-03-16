@@ -1,5 +1,11 @@
+# CSU:MB - CST 205
+# 3/15/2017
+# PicBeat
+# github: https://github.com/sllopis/project2-235
+# Authors: Daniel Crews, Sergio Llopis Donate, Juan Zuniga Ruiz
+
 # imagereader.py
-# Handles the collection of color data from an image
+# Handles the collection of color data from an image using Pillow
 
 from PIL import Image
 import os, sys
@@ -8,6 +14,7 @@ from statistics import mean
 # get_column_average
 # file -> The absolute path of the file
 # Returns a list of tuples based on the average rgb value of each
+# Primary author: Sergio Llopis Donate
 def get_column_average(file):
     # Will store the entire list of tuples, the data-type expected by pysynth
     color_tuples = []

@@ -1,3 +1,9 @@
+# CSU:MB - CST 205
+# 3/15/2017
+# PicBeat
+# github: https://github.com/sllopis/project2-235
+# Authors: Daniel Crews, Sergio Llopis Donate, Juan Zuniga Ruiz
+
 # songmaker.py
 # Handles the generation and saving of the music files
 
@@ -7,6 +13,7 @@ import pysynth_s as pss
 import numpy
 
 # generate_song
+# Primary author: Juan Zuniga Ruiz
 # data ->       List of tuples.  Each tuple becomes one note
 # name ->       What the user would like to call the the song file (filename)
 # synth_type -> The type of synthesizer used ('a', 'b', 's')
@@ -36,6 +43,7 @@ def generate_song(data, name, synth_type, beats):
 
 # generate_note
 # c -> A tuple with 3 values (R,G,B)
+# Primary authors: Juan Zuniga Ruiz, Daniel Crews
 def generate_note(c):
     r = c[0]
     g = c[1]

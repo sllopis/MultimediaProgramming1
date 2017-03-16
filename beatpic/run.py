@@ -1,5 +1,12 @@
+# CSU:MB - CST 205
+# 3/15/2017
+# PicBeat
+# github: https://github.com/sllopis/project2-235
+# Authors: Daniel Crews, Sergio Llopis Donate, Juan Zuniga Ruiz
+
 # run.py
 # Flask application front end for PicBeat
+# Primary author: Daniel Crews
 
 import os
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, send_file
